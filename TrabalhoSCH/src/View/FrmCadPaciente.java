@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,8 +16,9 @@ import javax.swing.JOptionPane;
  */
 public class FrmCadPaciente extends javax.swing.JFrame {
 //instancia formulario Principal
+
     FrmPrincipal principal = new FrmPrincipal();
-    
+
     public FrmCadPaciente() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -262,6 +264,7 @@ public class FrmCadPaciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //testa se todos os campos obrigatorios estao preenchidos corretamente
+
     private boolean validarCadastro(Paciente paciente) {
         // passagem de valores dos textfields para o objeto
         if (paciente.setNome(tfNome.getText())) {
@@ -285,16 +288,17 @@ public class FrmCadPaciente extends javax.swing.JFrame {
         }
         return false;
     }
-    
+
     //checa qual Sexo do Paciente
     private String getSexoPaciente() {
         if (rbMasc.isSelected()) {
             return rbMasc.getText();
-        } else {
+        } else if (rbFem.isSelected()) {
             return rbFem.getText();
-        }
+        }else
+        return "";
     }
-    
+
     private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
         Paciente paciente = new Paciente();
 
